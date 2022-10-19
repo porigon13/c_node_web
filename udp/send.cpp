@@ -7,7 +7,7 @@
 // #include <arpa/inet.h>
 // #include <stdlib.h>
 #include "send.hpp"
-namespace umagurui
+namespace c_node_web
 {
 
 Transmit::Transmit()

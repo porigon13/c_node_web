@@ -1,3 +1,5 @@
+#ifndef udp_sendhpp
+#define udp_sendhpp
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -11,7 +13,7 @@
 
 
 
-namespace umagurui
+namespace c_node_web
 {
 class Transmit
 {
@@ -43,3 +45,4 @@ public:
 
 };
 }
+#endif /*udp_sendhpp*/
