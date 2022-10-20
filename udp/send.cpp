@@ -23,31 +23,31 @@ void Transmit::send(int color_id,int position)
         if(color_id==0)
         {
             char string[4];
-            sprintf(string,"%c%c",id,eraser);
+            sprintf(string,"%c%c",id,m_eraser);
             sendto(DstAddrsock, string, sizeof(string)-1, 0, (struct sockaddr *)&DstAddr, sizeof(DstAddr));
         }
         else if(color_id == 1)
         {
             char string[4];
-            sprintf(string,"%c%c",id,red);
+            sprintf(string,"%c%c",id,m_red);
             sendto(DstAddrsock, string, sizeof(string)-1, 0, (struct sockaddr *)&DstAddr, sizeof(DstAddr));
         }
         else if(color_id == 2)
         {
             char string[4];
-            sprintf(string,"%c%c",id,blue);
+            sprintf(string,"%c%c",id,m_blue);
             sendto(DstAddrsock, string, sizeof(string)-1, 0, (struct sockaddr *)&DstAddr, sizeof(DstAddr));
         }
         else if(color_id == 3)
         {
             char string[4];
-            sprintf(string,"%c%c",id,green);
+            sprintf(string,"%c%c",id,m_green);
             sendto(DstAddrsock, string, sizeof(string)-1, 0, (struct sockaddr *)&DstAddr, sizeof(DstAddr));
         }
         else if(color_id ==4)
         {
             char string[4];
-            sprintf(string,"%c%c",id,yellow);
+            sprintf(string,"%c%c",id,m_yellow);
             sendto(DstAddrsock, string, sizeof(string)-1, 0, (struct sockaddr *)&DstAddr, sizeof(DstAddr));
         }
 }
@@ -89,52 +89,52 @@ void Transmit::init(char ip[])
 
 }
 
-void Transmit::rpm(int power,int num)
+void Transmit::rpm(int i_power,int num)
 {
     int digit=0;
-    integer = power;
-    while(integer != 0)
+    m_integer = i_power;
+    while(m_integer != 0)
     {
-        integer /= 10;
+        m_integer /= 10;
         digit++;
     }
-    char Power[digit];
+    char c_power[digit];
     char str[digit+3];
-    snprintf(Power,10,"%d",power);
-    sprintf(str,"P%d%d",num,power);
+    snprintf(c_power,10,"%d",i_power);
+    sprintf(str,"P%d%d",num,i_power);
     sendto(DstAddrsock, str, sizeof(str)-1, 0, (struct sockaddr *)&DstAddr, sizeof(DstAddr));
 }
 
-void Transmit::pitch(float angle,int num)
+void Transmit::pitch(float i_angle,int num)
 {
-    integer = angle;
-    while(integer != 0)
+    m_integer = i_angle;
+    while(m_integer != 0)
     {
-        integer /= 10;
-        digit++;
+        m_integer /= 10;
+        m_digit++;
     }
-    char Angle[digit+3];
-    char str[digit+6];
-    snprintf(Angle,10,"%2f",angle);
-    sprintf(str,"A%d%2f",num,angle);
+    char c_angle[m_digit+3];
+    char str[m_digit+6];
+    snprintf(c_angle,10,"%2f",i_angle);
+    sprintf(str,"A%d%2f",num,i_angle);
     sendto(DstAddrsock, str, sizeof(str)-1, 0, (struct sockaddr *)&DstAddr, sizeof(DstAddr));
-    digit = 0;
+    m_digit = 0;
 }
 
-void Transmit::yaw(float angle,int num)
+void Transmit::yaw(float i_angle,int num)
 {
-    integer = angle;
-    while(integer != 0)
+    m_integer = i_angle;
+    while(m_integer != 0)
     {
-        integer /= 10;
-        digit++;
+        m_integer /= 10;
+        m_digit++;
     }
-    char Angle[digit+3];
-    char str[digit+6];
-    snprintf(Angle,10,"%2f",angle);
-    sprintf(str,"Y%d%2f",num,Angle);
+    char c_angle[m_digit+3];
+    char str[m_digit+6];
+    snprintf(c_angle,10,"%2f",i_angle);
+    sprintf(str,"Y%d%2f",num,i_angle);
     sendto(DstAddrsock, str, sizeof(str)-1, 0, (struct sockaddr *)&DstAddr, sizeof(DstAddr));
-    digit =0;
+    m_digit =0;
 }
 }
 // int Send::position(const int n)

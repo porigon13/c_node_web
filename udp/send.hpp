@@ -22,13 +22,13 @@ private:
     struct sockaddr_in SrcAddr;
     int DstAddrsock;
     struct sockaddr_in DstAddr;
-    char red = 'r';
-    char blue = 'b';
-    char green = 'g';
-    char yellow = 'y';
-    char eraser = 'e';
-    int digit =0;
-    int integer=0;
+    char m_red = 'r';
+    char m_blue = 'b';
+    char m_green = 'g';
+    char m_yellow = 'y';
+    char m_eraser = 'e';
+    int m_digit =0;
+    int m_integer=0;
     // char cyan[7] = "cyan__";
     // char pink[7] = "pink__";
    
