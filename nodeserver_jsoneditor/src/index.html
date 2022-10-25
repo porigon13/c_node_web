@@ -25,7 +25,7 @@
 
       //外枠の線
       var ctx = document.getElementById('field').getContext('2d');
-      // ctx.font = '24px serif';
+      // ctx.font = '24text_x_size serif';
       // // ctx.strokeText('ガリガリ君', 300, 600);
       // // ctx.strokeText('ガリガリ君', 300, 624);
       var field_canvas = document.getElementById("field");
@@ -60,36 +60,218 @@
       rect_ctx.strokeRect(wx/5*3,wy/4*3,wx/5,wy/4);     //9
       rect_ctx.strokeRect(wx/5*4,wy/4*2,wx/5,wy/2);
 
-
     
-      
+      let red=0;
+      let blue=0;
+      let green=0;
+      let yellow=0;
       let num;
       let color;
       let context = field.getContext("2d");
       socket.on("fromC_receiveMessage", (message) => 
       {
+        let text_x_size= wx/30;
+        let text_y_size= wy/30;
+        text_size = (text_x_size+text_y_size)/2;
+        context.font = `${text_size}pt sans-serif`;
         // console.log(message);
         if("1"==message.charAt(0))
         {
           if("r"==message.charAt(1))
           {
+            if(red != 1)
+            {
+              if(red ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(red ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(red ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(red==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(red==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(red == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(red ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(red ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle = "red";
             rect_ctx.fillRect(wx/5,0,wx/5,wy/2);
+            red =1;
           }
           else if("b"==message.charAt(1))
           {
+            if(blue != 1)
+            {
+              if(blue ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(blue ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(blue ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(blue==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(blue==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(blue == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(blue ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(blue ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle = "blue";
             rect_ctx.fillRect(wx/5,0,wx/5,wy/2);
+            blue =1;
           }
           else if("g"==message.charAt(1))
           {
+            if(green != 1)
+            {
+              if(green ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(green ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(green ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(green==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(green==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(green == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(green ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(green ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle = "green";
             rect_ctx.fillRect(wx/5,0,wx/5,wy/2);
+            green =1;
           }
           else if("y"==message.charAt(1))
           {
+            if(yellow != 1)
+            {
+              if(yellow ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(yellow ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(yellow ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(yellow==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(yellow==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(yellow == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(yellow ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(yellow ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle = "yellow";
             rect_ctx.fillRect(wx/5,0,wx/5,wy/2);
+            yellow=1;
           }
           if("e"==message.charAt(1))
           {
@@ -102,23 +284,196 @@
         {
           if("r"==message.charAt(1))
           {
+            if(red != 2)
+            {
+              if(red ==1)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(red ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(red ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(red==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(red==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(red == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(red ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(red ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle ="red";
             rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+            red =2;
           }
           else if("b"==message.charAt(1))
           {
+            if(blue != 2)
+            {
+              if(blue ==1)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(blue ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(blue ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(blue==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(blue==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(blue == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(blue ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(blue ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle ="blue";
             rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+            blue=2;
           }
           else if("g"==message.charAt(1))
           {
+            if(green != 2)
+            {
+              if(green ==1)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(green ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(green ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(green==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(green==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(green == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(green ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(green ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle ="green";
             rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+            green=2;
           }
           else if("y"==message.charAt(1))
           {
+            if(yellow != 2)
+            {
+              if(yellow ==1)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               
+              }
+              else if(yellow ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(yellow ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(yellow==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(yellow==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(yellow == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(yellow ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(yellow ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle ="yellow";
             rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+            yellow=2;
           }
           else if("e"==message.charAt(1))
           {
@@ -131,23 +486,199 @@
         {
           if("r"==message.charAt(1))
           {
+            if(red != 3)
+            {
+              if(red ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(red ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               
+              }
+              else if(red ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(red==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(red==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(red == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(red ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(red ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="red"
             rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+            red=3;
           }
           else if("b"==message.charAt(1))
           {
+            if(blue != 3)
+            {
+              if(blue ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(blue ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               
+              }
+              else if(blue ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(blue==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(blue==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(blue == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(blue ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(blue ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="blue";
             rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+            blue=3;
           }
           else if("y"==message.charAt(1))
           {
+            if(yellow != 3)
+            {
+              if(yellow ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(yellow ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               
+              }
+              else if(yellow ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(yellow==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(yellow==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(yellow == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(yellow ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(yellow ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="yellow";
             rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+            yellow=3;
           }
           else if("g"==message.charAt(1))
           {
+            if(green != 3)
+            {
+              if(green ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(green ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               
+              }
+              else if(green ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(green==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(green==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(green == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(green ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(green ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="green";
             rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+            green =3;
           }
           else if("e"==message.charAt(1))
           {
@@ -160,23 +691,196 @@
         {
           if("r"==message.charAt(1))
           {
+            if(red != 4)
+            {
+              if(red ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(red ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(red ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               
+              }
+              else if(red==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(red==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(red == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(red ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(red ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="red"
             rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2);    //4
+            red =4;
           }
           else if("b"==message.charAt(1))
           {
+            if(blue != 4)
+            {
+              if(blue ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(blue ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(blue ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(blue==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(blue==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(blue == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(blue ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(blue ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="blue";
             rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2);    //4
+            blue = 4;
           }
           else if("y"==message.charAt(1))
           {
+            if(yellow != 4)
+            {
+              if(yellow ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(yellow ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(yellow ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(yellow==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(yellow==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(yellow == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(yellow ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(yellow ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="yellow";
             rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2);    //4
+            yellow = 4;
           }
           else if("g"==message.charAt(1))
           {
+            if(green != 4)
+            {
+              if(green ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(green ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(green ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(green==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(green==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(green == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(green ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(green ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="green";
             rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2);    //4
+            green=4;
           }
           else if("e"==message.charAt(1))
           {
@@ -189,139 +893,1026 @@
         {
           if("r"==message.charAt(1))
           {
+            if(red != 5)
+            {
+              if(red ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(red ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(red ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(red==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(red==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(red == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(red ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(red ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="red"
-            rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+            rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+            red =5;
+
           }
           else if("b"==message.charAt(1))
           {
+            if(blue != 5)
+            {
+              if(blue ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(blue ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(blue ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(blue==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(blue==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(blue == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(blue ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(blue ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="blue";
-            rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+            rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+            blue = 5;
+
           }
           else if("y"==message.charAt(1))
           {
+            if(yellow != 5)
+            {
+              if(yellow ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(yellow ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(yellow ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(yellow==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(yellow==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(yellow == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(yellow ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(yellow ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="yellow";
-            rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+            rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+            yellow =5;
+
           }
           else if("g"==message.charAt(1))
           {
+            if(green != 5)
+            {
+              if(green ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(green ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(green ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(green==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(green==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(green == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(green ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(green ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="green";
-            rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+            rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+            green =5;
+
           }
           else if("e"==message.charAt(1))
           {
             rect_ctx.fillStyle="white";
-            rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+            rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+
           }
-          rect_ctx.strokeRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+          rect_ctx.strokeRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+
         }
         if("6"==message.charAt(0))
         {
           if("r"==message.charAt(1))
           {
+            if(red != 6)
+            {
+              if(red ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(red ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(red ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(red==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(red==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(red == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(red ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(red ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="red"
-            rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+            // rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+            rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+            red =6;
+
           }
           else if("b"==message.charAt(1))
           {
+            if(blue != 6)
+            {
+              if(blue ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(blue ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(blue ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(blue==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(blue==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(blue == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(blue ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(blue ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="blue";
-            rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+            rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+            blue  =6;
+
           }
           else if("y"==message.charAt(1))
           {
+            if(yellow != 6)
+            {
+              if(yellow ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(yellow ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(yellow ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(yellow==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(yellow==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(yellow == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(yellow ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(yellow ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="yellow";
-            rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+            rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+            yellow=6;
+
           }
           else if("g"==message.charAt(1))
           {
+            if(green != 6)
+            {
+              if(green ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(green ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(green ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(green==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(green==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(green == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(green ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(green ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="green";
-            rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+            rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+            green=6;
+
           }
           else if("e"==message.charAt(1))
           {
             rect_ctx.fillStyle="white";
-            rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+            rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+
           }
-          rect_ctx.strokeRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+          rect_ctx.strokeRect(wx/5,wy/4*2,wx/10*3,wy/4);    //5
+
         }
         if("7"==message.charAt(0))
         {
           if("r"==message.charAt(1))
           {
+            if(red != 7)
+            {
+              if(red ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(red ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(red ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(red==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(red==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(red == 1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(red ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(red ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="red"
-            rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+            rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);     //8
+            red=7;
           }
           else if("b"==message.charAt(1))
           {
+            if(blue != 7)
+            {
+              if(blue ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(blue ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(blue ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(blue==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(blue==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(blue == 1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(blue ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(blue ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="blue";
-            rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+            rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);     //8
+            blue=7;
+
           }
           else if("y"==message.charAt(1))
           {
+            if(yellow != 7)
+            {
+              if(yellow ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(yellow ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(yellow ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(yellow==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(yellow==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(yellow == 1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(yellow ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(yellow ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="yellow";
-            rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+            rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);     //
+            yellow=7;
+
           }
           else if("g"==message.charAt(1))
           {
+            if(green != 7)
+            {
+              if(green ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(green ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(green ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(green==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(green==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(green == 1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(green ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(green ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="green";
-            rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+            rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);     //8
+            green=7;
+
           }
           else if("e"==message.charAt(1))
           {
             rect_ctx.fillStyle="white";
-            rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+            rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);     //8
+
+
           }
-          rect_ctx.strokeRect(wx/5,wy/4*3,wx/5,wy/4);       //7
+          rect_ctx.strokeRect(wx/5*2,wy/4*3,wx/5,wy/4);     //8
+
         }
         if("8"==message.charAt(0))
         {
+          
           if("r"==message.charAt(1))
           {
+            if(red != 8)
+            {
+              if(red ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(red ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(red ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(red==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(red==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(red == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(red ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(red ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="red"
-            rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);     //8
+            rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+            red=8;
+
           }
           else if("b"==message.charAt(1))
           {
+            if(blue != 8)
+            {
+              if(blue ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(blue ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(blue ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(blue==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(blue==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(blue == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(blue ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(blue ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="blue";
-            rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);     //8
+            rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+            blue=8;
+
           }
           else if("y"==message.charAt(1))
           {
+            if(yellow != 8)
+            {
+              if(yellow ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(yellow ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(yellow ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(yellow==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(yellow==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(yellow == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(yellow ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(yellow ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="yellow";
-            rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);     //8
+            rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+            yellow=8;
+
           }
           else if("g"==message.charAt(1))
           {
+            if(green != 8)
+            {
+              if(green ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(green ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(green ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(green==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(green==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(green == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(green ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+              else if(green ==9)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4); 
+              }
+            }
             rect_ctx.fillStyle="green";
-            rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);     //8
+            rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+            green=8;
+
           }
           else if("e"==message.charAt(1))
           {
             rect_ctx.fillStyle="white";
-            rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);     //8
+            rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+
           }
-          rect_ctx.strokeRect(wx/5*2,wy/4*3,wx/5,wy/4);     //8
+          rect_ctx.strokeRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+
         }
         if("9"==message.charAt(0))
         {
           if("r"==message.charAt(1))
           {
+            if(red != 9)
+            {
+              if(red ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(red ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(red ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(red==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(red==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(red == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(red ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(red ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+            }
             rect_ctx.fillStyle="red"
             rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4);     //9
+            red=9;
           }
           else if("b"==message.charAt(1))
           {
+            if(blue != 9)
+            {
+              if(blue ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(blue ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(blue ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(blue==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(blue==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(blue == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(blue ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(blue ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+            }
             rect_ctx.fillStyle="blue";
             rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4);     //9
+            blue=9;
           }
           else if("y"==message.charAt(1))
           {
+            if(yellow != 9)
+            {
+              if(yellow ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(yellow ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(yellow ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(yellow==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(yellow==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(yellow == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(yellow ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(yellow ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               }
+            }
             rect_ctx.fillStyle="yellow";
             rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4);     //9
+            yellow=9;
           }
           else if("g"==message.charAt(1))
           {
+            if(green != 9)
+            {
+              if(green ==2)
+              {
+                rect_ctx.fillStyle ="white";
+                rect_ctx.fillRect(wx/5*2,0,wx/5,wy/4);
+              }
+              else if(green ==3)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4,wx/5,wy/4);
+              }
+              else if(green ==4)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*3,0,wx/5,wy/2); 
+              }
+              else if(green==5)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*3,wx/5,wy/4);  
+              }
+              else if(green==6)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,wy/4*2,wx/10*3,wy/4);
+              }
+              else if(green == 7)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5*2,wy/4*3,wx/5,wy/4);   
+              }
+              else if(green ==8)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/10*5,wy/4*2,wx/10*3,wy/4); //6
+              }
+              else if(green ==1)
+              {
+                rect_ctx.fillStyle="white";
+                rect_ctx.fillRect(wx/5,0,wx/5,wy/2);               
+              }
+            }
             rect_ctx.fillStyle="green";
             rect_ctx.fillRect(wx/5*3,wy/4*3,wx/5,wy/4);     //9
+            green=9;
           }
           else if("e"==message.charAt(1))
           {
@@ -330,47 +1921,41 @@
           }
           rect_ctx.strokeRect(wx/5*3,wy/4*3,wx/5,wy/4);     //9
         }
+        
         else if(message.charAt(0)=="P")
         {
-          
           if(message.charAt(1)=="1")
           {
             rect_ctx.fillStyle="white";
             rect_ctx.fillRect(0,0,wx/5,wy/6); 
             rect_ctx.fillStyle="black";        
-            let px= wx/50;
             message = message.replace("P","");
             message = message.replace("1","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("rpm",px/1.5,px);
-            context.fillText("= "+message,(wx/5-textWidth)/2-px,px*2.5);
+            context.fillText("rpm",(wx/5-text_size*3)/2,text_size);
+            context.fillText(message,(wx/5-textWidth)/2,text_size*2.5);
           }
           else if(message.charAt(1)=="2")
           {
             rect_ctx.fillStyle = "white";
             rect_ctx.fillRect(wx/5*4,0,wx/5,wy/6);
             rect_ctx.fillStyle="black";          
-            let px= wx/50;
             message = message.replace("P","");
             message = message.replace("2","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("rpm",wx/10*8+px/1.5,px);
-            context.fillText("= "+message,wx/10*8+(wx/5-textWidth)/2-px,px*2.5);
+            context.fillText("rpm",wx/10*8+(wx/5-text_size*3)/2,text_size);
+            context.fillText(message,wx/10*8+(wx/5-textWidth)/2,text_size*2.5);
           }
           else if(message.charAt(1)=="3")
           {
             rect_ctx.fillStyle = "white";
             rect_ctx.fillRect(0,wy/4*2,wx/5,wy/6);
             rect_ctx.fillStyle="black";        
-            let px= wx/50;
             message = message.replace("P","");
             message = message.replace("3","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("rpm",px/1.5,wy/2+px);
-            context.fillText("= "+message,(wx/5-textWidth)/2-px,wy/2+px*2.5);
+            context.fillText("rpm",(wx/5-text_size*3)/2,wy/2+text_size);
+            context.fillText(message,(wx/5-textWidth)/2,wy/2+text_size*2.5);
 
           }
           else if(message.charAt(1)=="4")
@@ -378,13 +1963,11 @@
             rect_ctx.fillStyle = "white";
             rect_ctx.fillRect(wx/5*4,wy/4*2,wx/5,wy/6);
             rect_ctx.fillStyle="black";        
-            let px= wx/50;
             message = message.replace("P","");
             message = message.replace("4","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("rpm",wx/10*8+px/1.5,px+wy/2);
-            context.fillText("= "+message,wx/10*8+(wx/5-textWidth)/2-px,wy/2+px*2.5);
+            context.fillText("rpm",wx/10*8+(wx/5-text_size*3)/2,text_size+wy/2);
+            context.fillText(message,wx/10*8+(wx/5-textWidth)/2,wy/2+text_size*2.5);
           }
         }
         else if(message.charAt(0)=="A")
@@ -395,39 +1978,33 @@
             rect_ctx.fillStyle="white";
             rect_ctx.fillRect(0,wy/6,wx/5,wy/6); 
             rect_ctx.fillStyle="black";        
-            let px= wx/50;
             message = message.replace("A","");
             message = message.replace("1","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("pitch",px/1.5,px*3+wy/6);
-            context.fillText("= "+message,(wx/5-textWidth)/2-px,px*4.5+wy/6);
+            context.fillText("pitch",(wx/5-text_size*5)/2+text_size,text_size+wy/6);
+            context.fillText(message,(wx/5-textWidth)/2,text_size*2.5+wy/6);
           }
           else if(message.charAt(1)=="2")
           {
             rect_ctx.fillStyle = "white";
             rect_ctx.fillRect(wx/5*4,wy/6,wx/5,wy/6);
             rect_ctx.fillStyle="black";          
-            let px= wx/50;
             message = message.replace("A","");
             message = message.replace("2","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("pitch",wx/10*8+px/1.5,px*3+wy/6);
-            context.fillText("= "+message,wx/10*8+(wx/5-textWidth)/2-px,px*4.5+wy/6);
+            context.fillText("pitch",wx/10*8+(wx/5-text_size*5)/2+text_size,text_size+wy/6);
+            context.fillText(message,wx/10*8+(wx/5-textWidth)/2,text_size*2.5+wy/6);
           }
           else if(message.charAt(1)=="3")
           {
             rect_ctx.fillStyle = "white";
             rect_ctx.fillRect(0,wy/4*2+wy/6,wx/5,wy/6);
             rect_ctx.fillStyle="black";        
-            let px= wx/50;
             message = message.replace("A","");
             message = message.replace("3","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("pitch",px/1.5,wy/2+px*3+wy/6);
-            context.fillText("= "+message,(wx/5-textWidth)/2-px,wy/2+px*4.5+wy/6);
+            context.fillText("pitch",(wx/5-text_size*5)/2+text_size,wy/2+text_size+wy/6);
+            context.fillText(message,(wx/5-textWidth)/2,wy/2+text_size*2.5+wy/6);
 
           }
           else if(message.charAt(1)=="4")
@@ -435,13 +2012,11 @@
             rect_ctx.fillStyle = "white";
             rect_ctx.fillRect(wx/5*4,wy/4*2+wy/6,wx/5,wy/6);
             rect_ctx.fillStyle="black";        
-            let px= wx/50;
             message = message.replace("A","");
             message = message.replace("4","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("pitch",wx/10*8+px/1.5,px*3+wy/2+wy/6);
-            context.fillText("= "+message,wx/10*8+(wx/5-textWidth)/2-px,wy/2+px*4.5+wy/6);
+            context.fillText("pitch",wx/10*8+(wx/5-text_size*5)/2+text_size,text_size+wy/2+wy/6);
+            context.fillText(message,wx/10*8+(wx/5-textWidth)/2,wy/2+text_size*2.5+wy/6);
           }
         }
         else if(message.charAt(0)=="Y")
@@ -452,39 +2027,33 @@
             rect_ctx.fillStyle="white";
             rect_ctx.fillRect(0,0+wy/3,wx/5,wy/6); 
             rect_ctx.fillStyle="black";        
-            let px= wx/50;
             message = message.replace("Y","");
             message = message.replace("1","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("yaw",px/1.5,px*5+wy/3);
-            context.fillText("= "+message,(wx/5-textWidth)/2-px,px*6.5+wy/3);
+            context.fillText("yaw",(wx/5-text_size*3)/2,text_size+wy/3);
+            context.fillText(message,(wx/5-textWidth)/2,text_size*2.5+wy/3);
           }
           else if(message.charAt(1)=="2")
           {
             rect_ctx.fillStyle = "white";
             rect_ctx.fillRect(wx/5*4,0+wy/3,wx/5,wy/6);
             rect_ctx.fillStyle="black";          
-            let px= wx/50;
             message = message.replace("Y","");
             message = message.replace("2","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("yaw",wx/10*8+px/1.5,px*5+wy/3);
-            context.fillText("= "+message,wx/10*8+(wx/5-textWidth)/2-px,px*6.5+wy/3);
+            context.fillText("yaw",wx/10*8+(wx/5-text_size*3)/2,text_size+wy/3);
+            context.fillText(message,wx/10*8+(wx/5-textWidth)/2,text_size*2.5+wy/3);
           }
           else if(message.charAt(1)=="3")
           {
             rect_ctx.fillStyle = "white";
             rect_ctx.fillRect(0,wy/4*2+wy/3,wx/5,wy/6);
             rect_ctx.fillStyle="black";        
-            let px= wx/50;
             message = message.replace("Y","");
             message = message.replace("3","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("yaw",px/1.5,wy/2+px*5+wy/3);
-            context.fillText("= "+message,(wx/5-textWidth)/2-px,wy/2+px*6.5+wy/3);
+            context.fillText("yaw",(wx/5-text_size*3)/2,wy/2+text_size+wy/3);
+            context.fillText(message,(wx/5-textWidth)/2,wy/2+text_size*2.5+wy/3);
 
           }
           else if(message.charAt(1)=="4")
@@ -492,16 +2061,13 @@
             rect_ctx.fillStyle = "white";
             rect_ctx.fillRect(wx/5*4,wy/4*2+wy/3,wx/5,wy/6);
             rect_ctx.fillStyle="black";        
-            let px= wx/50;
             message = message.replace("Y","");
             message = message.replace("4","");
             let textWidth = context.measureText(message).width;
-            context.font = `${px}pt sans-serif`;
-            context.fillText("yaw",wx/10*8+px/1.5,px*5+wy/2+wy/3);
-            context.fillText("= "+message,wx/10*8+(wx/5-textWidth)/2-px,wy/2+px*6.5+wy/3);
+            context.fillText("yaw",wx/10*8+(wx/5-text_size*3)/2,text_size+wy/2+wy/3);
+            context.fillText(message,wx/10*8+(wx/5-textWidth)/2,wy/2+text_size*2.5+wy/3);
           }
         }
-      
         rect_ctx.strokeRect(0,0,wx/5,wy/2);         
         rect_ctx.strokeRect(wx/5,0,wx/5,wy/2);      //1
         rect_ctx.strokeRect(wx/5*2,0,wx/5,wy/4);    //2
